@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+    </head>
+    <body>
+        <script>
+            (function() {
+                var n = 0;
+                var n_max = 5;
+                var m = 3000
+                this.run = function() {
+                    if (n === n_max) {
+                        return "Функция может быть запущена не чаще чем " + n + " раз в " + (m / 1000) + " секунд";
+                    }
+                    n += 1;
+                    return  "Функция была запущена " + n + "раз";
+                }
+                setInterval(function() {
+                    n = 0
+                }, m)
+            })()
+            for (var i = 0; i < 7; i++) {
+                var date = new Date();
+                console.log(run() + ' ' + date.getHours() + '-' + date.getMinutes() + '-' + date.getSeconds() + ':' + date.getMilliseconds())
+            }
+
+            setTimeout(function() {
+                for (var i = 0; i < 7; i++) {
+                    var date = new Date();
+                    console.log(run() + ' ' + date.getHours() + '-' + date.getMinutes() + '-' + date.getSeconds() + ':' + date.getMilliseconds())
+                }
+            }, 5000);
+        </script>
+    </body>
+</html>
